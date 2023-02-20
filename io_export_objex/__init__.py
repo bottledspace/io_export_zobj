@@ -2,7 +2,7 @@
 
 bl_info = {
     "name": "OBJEX Exporter",
-    "author": "astronotter, CrookedPoe(?), Campbell Barton, Bastien Montagne",
+    "author": "astronotter, CrookedPoe, z64me, Campbell Barton, Bastien Montagne",
     "version": (1,0,0),
     "blender": (2, 80, 0),
     "location": "File > Export > OBJEX",
