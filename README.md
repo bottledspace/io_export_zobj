@@ -1,3 +1,5 @@
 # io_export_zobj
 
-While the name of this repository implies that this exports to ZOBJ, right now it is simply an update of the OBJEX exporter to the newest version of Blender for using the old pipeline. In the future, zzconvert and zzplayas will be called directly in order to output a ZOBJ. 
+This Blender exporter provides a front-end for zzobjman and zzplayas (the so-called 'old pipeline') by Dr.Disco. Models are first passed to an updated version of the OBJEX exporter script by CrookedPoe and z64me to convert the model to an intermediary form. The models exported using this addon are suitable for OoT Randomizer and Modloader64 (depending on the settings used).
+
+A future goal would be to replace the need for an intermediary format and separate tools with a direct conversion.
