@@ -81,7 +81,7 @@ class ExportZOBJ(bpy.types.Operator, ExportHelper, IOOBJOrientationHelper):
         items=[("CHILD", "Child", "Link Child Model"),
                ("ADULT", "Adult", "Link Boy Model"),
                ("OTHER", "Other", "Custom Model") ])
-    rom_path            = StringProperty(name="OoT ROM (decompressed)", subtype="FILE_PATH")
+    
     # context group
     use_selection = BoolProperty(
             name="Selection Only",
@@ -234,14 +234,11 @@ class ExportZOBJ(bpy.types.Operator, ExportHelper, IOOBJOrientationHelper):
         subprocess.run(zzconvert)
 
         if self.use_playas and self.model_type != "NONE":
-            # TODO Playas seems to require you to patch the rom when calling
-            # from command-line. Unsure if there is a way to avoid this like
-            # with the GUI...
             zzplayas = []
             zzplayas.append(os.path.join(CWD, "zzobjman.exe"))
             zzplayas.append("playas")
             zzplayas.append("-r")
-            zzplayas.append(self.rom_path)
+            zzplayas.append(self.filepath) # Provide the zobj as a rom...
             zzplayas.append("-i")
             zzplayas.append(self.filepath)
             zzplayas.append("-o")
